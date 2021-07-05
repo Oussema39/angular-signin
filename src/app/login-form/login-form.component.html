@@ -1,0 +1,76 @@
+<div class="signin-container">
+
+    <div class="content-container">
+    
+        <div class="description">
+            <div class="account-icon"></div>
+            <h1 class="welcome">Welcome Back</h1>
+            <p>to keep connected with us please sign in with your personal info</p>
+        </div>
+    
+        <form #signin="ngForm" novalidate (ngSubmit)="onSubmit()">
+            {{signin.value | json}}
+            <h1 class="sign-in-now">SIGN IN NOW</h1>
+
+            <mat-form-field hideRequiredMarker appearance="outline">
+                <mat-label for="email">Email</mat-label>
+                <mat-icon matPrefix [ngClass]="{'error': email.touched && email.invalid}">
+                    email
+                </mat-icon>
+                <input 
+                    hideRequiredMarker
+                    matInput
+                    required 
+                    (change)="handleEmailChange(email.value)"
+                    [(ngModel)]="user.email"
+                    #email="ngModel"
+                    placeholder="example@email.com" 
+                    name="email" 
+                    type="email"
+                >
+                <mat-error *ngIf="email.touched && (email.invalid || isEmail)">
+                    Invalid Email
+                </mat-error>
+              </mat-form-field>
+        
+              <mat-form-field hideRequiredMarker appearance="outline">
+                <mat-label for="password">Password</mat-label>
+                <mat-icon matPrefix 
+                    [ngClass]="{'error': password.touched && password.invalid}" 
+                >
+                    lock
+                </mat-icon>
+                <input
+                    ngModel
+                    matInput 
+                    required 
+                    [(ngModel)]="user.password"
+                    #password="ngModel"
+                    placeholder="enter your Password" 
+                    name="password" 
+                    [type]="hide ? 'password' : 'text'"
+                >
+                <button mat-icon-button matSuffix (click)="$event.preventDefault();hide = !hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error *ngIf="password.touched && password.invalid">
+                    Password is required
+                </mat-error>
+              </mat-form-field>
+        
+              <button
+                    mat-raised-button
+                    color="primary"
+                    type="submit" 
+                    class="submit-btn"
+                    [disabled]="!signin.valid"
+                >
+                    <span>Sign In</span>
+              </button>
+        
+
+        </form>
+        <a href="#">Need Help ?</a>
+    </div>
+    
+</div>

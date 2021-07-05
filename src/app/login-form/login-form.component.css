@@ -1,0 +1,116 @@
+.signin-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, var(--primary) 50%, #FFFF 50%);
+}
+.content-container{
+    border-radius: 5px;
+    display: flex;
+    width: 80%;
+    height: 75%;
+    box-shadow: 5px 25px 50px 8px rgba(78, 78, 78, .4);
+    position: relative;
+}
+
+.description{
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    width: 50%;
+}
+
+.account-icon{
+    background-image: url('../common/svg/account_circle_black_24dp.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    filter: invert(1);
+    margin-bottom: .5rem;
+}
+
+h1.welcome{
+    font-weight: 500;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+p{
+    color: #FFFF;
+    max-width: 50%;
+    text-align: center;
+}
+
+form{
+    padding: 5%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sign-in-now{
+    background: -webkit-linear-gradient(bottom right, #090363,var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.submit-btn{
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    gap: 5px;
+}
+.check{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('../common/svg/check_black_24dp.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;    
+    filter: invert(1);
+}
+
+a{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    color: var(--primary);
+}
+
+mat-icon{
+    color: var(--primary);
+}
+
+.error{
+    color: red;
+}
+
+@media (max-width : 910px) {
+    .signin-container{
+        background : white;
+    }
+    .content-container{
+        flex-direction: column;
+        height: 80%;
+        z-index: 10;
+        align-items: center;
+        justify-content: center;
+    }
+    form{
+        width: 90%;
+    }
+    .description{
+        display: none;
+    }
+}
