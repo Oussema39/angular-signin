@@ -58,7 +58,6 @@ form{
     background: -webkit-linear-gradient(bottom right, #090363,var(--primary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
 }
 .submit-btn{
     padding: 5px 0;
